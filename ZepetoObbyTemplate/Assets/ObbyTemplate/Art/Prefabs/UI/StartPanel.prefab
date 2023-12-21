@@ -251,7 +251,7 @@ RectTransform:
   m_GameObject: {fileID: 4251887329335744307}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_Children: []
   m_Father: {fileID: 4453706167620401239}
   m_RootOrder: 0
@@ -413,7 +413,6 @@ GameObject:
   - component: {fileID: 6508829751859131320}
   - component: {fileID: 6205200666067554942}
   - component: {fileID: 2733181298425788976}
-  - component: {fileID: 1731797877351736461}
   m_Layer: 0
   m_Name: ZepetoText
   m_TagString: Untagged
@@ -471,7 +470,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: d9603d5455c3e2c429da08179c5b656c, type: 3}
     m_FontSize: 46
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 46
@@ -486,20 +485,6 @@ MonoBehaviour:
   m_HorizontalFit: 0
   m_VerticalFit: 0
   padding: {x: 3, y: 0}
---- !u!114 &1731797877351736461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8127973389031112677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 0
 --- !u!1 &8770449229314610892
 GameObject:
   m_ObjectHideFlags: 0

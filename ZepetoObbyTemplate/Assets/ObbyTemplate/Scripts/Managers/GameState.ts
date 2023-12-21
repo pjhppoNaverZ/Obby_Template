@@ -1,6 +1,6 @@
 import { GameObject, Time } from 'UnityEngine';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
-import { SpawnInfo, ZepetoCharacter, ZepetoPlayers } from 'ZEPETO.Character.Controller'
+import { SpawnInfo, ZepetoCharacter, ZepetoPlayers, UIZepetoPlayerControl } from 'ZEPETO.Character.Controller'
 import ObbyGameManager from './ObbyGameManager';
 import LevelScript from './LevelScript';
 import { SceneManager } from 'UnityEngine.SceneManagement';
@@ -20,6 +20,9 @@ export default class GameState extends ZepetoScriptBehaviour
     private _levelSpawned: GameObject; // The actual level
     private _actualLevel: int = 0; // The counter of the actual level
     private _playerSpawned: bool; // Controls if the player is already on world
+
+    private controlUI: UIZepetoPlayerControl; // Reference to the UIZepetoPlayerControl to restrict the use when you are in the game
+
 
     // Awake is called when the script instance is being loaded
     Awake () 
@@ -53,6 +56,9 @@ export default class GameState extends ZepetoScriptBehaviour
         ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener( () => {
             // We save the reference of the ZepetoCharacter
             this.zepetoCharacter = ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character; 
+
+             // Find a object with the type of UIZepetoPlayerControl and set it on the variable
+             this.controlUI = GameObject.FindObjectOfType<UIZepetoPlayerControl>();
 
             // When the game starts, we turn off the mainCamera/lobbyCamera
             ObbyGameManager.instance.lobbyCamera.SetActive(false);
@@ -136,6 +142,8 @@ export default class GameState extends ZepetoScriptBehaviour
     
         // Finally we set the internal flag that it is possible to win
         this.canWin = true;
+
+        this.ControlPlayer(true);
     }
     
     // This method is called when the player wins
@@ -146,6 +154,8 @@ export default class GameState extends ZepetoScriptBehaviour
     
         // We call the internal method that resets the game variables
         this.ResetGameVariables();
+
+        this.ControlPlayer(false);
     }
     
     // This method is called when the player loses
@@ -156,5 +166,17 @@ export default class GameState extends ZepetoScriptBehaviour
         
         // We call the internal method that resets the game variables
         this.ResetGameVariables();
+
+        this.ControlPlayer(false);
+    }
+
+    // This function active or deactive the control of the player
+    public ControlPlayer(activePlayer: bool) {
+        // If the controlUI is not null, deactivate the object
+        this.controlUI?.gameObject.SetActive(activePlayer);
+
+        // Check if the player have to be active and set the camera sensitivity on 5 or 0 
+        if (activePlayer) ZepetoPlayers.instance.cameraData.sensitivity = 5;
+        else ZepetoPlayers.instance.cameraData.sensitivity = 0;
     }
 }
