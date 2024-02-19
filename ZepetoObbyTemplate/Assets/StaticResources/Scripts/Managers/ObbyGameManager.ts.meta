@@ -1,0 +1,52 @@
+fileFormatVersion: 2
+guid: 3ac695146e23f3640809272de4b8627b
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst GameState_1 = require(\"./GameState\");\r\n//
+    This class controls the checkpoint system for the player\r\nclass ObbyGameManager
+    extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    // Awake is called when
+    the script instance is being loaded\r\n    Awake() {\r\n        // This is how
+    the instance of this class is allocated. Which makes it a \"singleton\"\r\n       
+    // Singleton https://en.wikipedia.org/wiki/Singleton_pattern\r\n        if (ZEPETO_Script_1.ZepetoScriptBehaviour.op_Equality(ObbyGameManager.instance,
+    null)) {\r\n            ObbyGameManager.instance = this;\r\n        }\r\n       
+    else {\r\n            UnityEngine_1.GameObject.Destroy(this);\r\n        }\r\n   
+    }\r\n    // Control when the player has fallen down and respawn him on the last
+    checkpoint\r\n    // Update is called every frame, if the MonoBehaviour is enabled\r\n   
+    Update() {\r\n        // Check if the \"zepetoCharacter\" variable of the \"GameState\"
+    instance is not null\r\n        if (GameState_1.default.Instance.zepetoCharacter
+    != null) {\r\n            // Check if the positios of the \"zepetoCharacter\"
+    is less than -20 on Y\r\n            // Which means that the player has fallen
+    from the platforms, if so\r\n            if (GameState_1.default.Instance.zepetoCharacter.transform.position.y
+    < -20) {\r\n                // We send the player to the position of \"_currentCheckpoint\"
+    \r\n                GameState_1.default.Instance.zepetoCharacter.transform.position
+    = this._currentCheckpoint.transform.position;\r\n                // Call to the
+    internal method that teleports the player\r\n                this.TeleportCharacter();\r\n           
+    }\r\n        }\r\n    }\r\n    // This method updates the current checkpoint
+    to one passed by parameter\r\n    UpdateCheckpoint(newCheckpoint) {\r\n       
+    // Here we set the reference of \"_checkPoint\"\r\n        this._currentCheckpoint
+    = newCheckpoint;\r\n    }\r\n    // Teleport the character to last checkpoint
+    position\r\n    TeleportCharacter() {\r\n        // We make a call to the function
+    of \"zepetoCharacter\" \"teleport\", passing both position and rotation as parameters\r\n       
+    GameState_1.default.Instance.zepetoCharacter.Teleport(this._currentCheckpoint.transform.position,
+    GameState_1.default.Instance.zepetoCharacter.transform.rotation);\r\n    }\r\n}\r\nexports.default
+    = ObbyGameManager;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiT2JieUdhbWVNYW5hZ2VyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiT2JieUdhbWVNYW5hZ2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQXlEO0FBQ3pELGlEQUFxRDtBQUVyRCwyQ0FBb0M7QUFFcEMsMkRBQTJEO0FBQzNELE1BQXFCLGVBQWdCLFNBQVEscUNBQXFCO0lBSzlELDJEQUEyRDtJQUMzRCxLQUFLO1FBQ0Qsb0ZBQW9GO1FBQ3BGLDREQUE0RDtRQUM1RCxJQWRDLHFDQUFxQixDQWlEc2dKLFdBQVksQ0FuQ3BpSixlQUFlLENBQUMsUUFBUSxFQUFJLElBQUksR0FBRTtZQUNsQyxlQUFlLENBQUMsUUFBUSxHQUFHLElBQUksQ0FBQztTQUNuQzthQUFNO1lBQ0gsd0JBQVUsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLENBQUM7U0FDNUI7SUFDTCxDQUFDO0lBRUQsaUZBQWlGO0lBQ2pGLGdFQUFnRTtJQUNoRSxNQUFNO1FBQ0Ysa0ZBQWtGO1FBQ2xGLElBQUksbUJBQVMsQ0FBQyxRQUFRLENBQUMsZUFBZSxJQUFJLElBQUksRUFBRTtZQUM1Qyx1RUFBdUU7WUFDdkUsbUVBQW1FO1lBQ25FLElBQUksbUJBQVMsQ0FBQyxRQUFRLENBQUMsZUFBZSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxHQUFHLENBQUMsRUFBRSxFQUFFO2dCQUMvRCw4REFBOEQ7Z0JBQzlELG1CQUFTLENBQUMsUUFBUSxDQUFDLGVBQWUsQ0FBQyxTQUFTLENBQUMsUUFBUSxHQUFHLElBQUksQ0FBQyxrQkFBa0IsQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDO2dCQUVuRyx3REFBd0Q7Z0JBQ3hELElBQUksQ0FBQyxpQkFBaUIsRUFBRSxDQUFDO2FBQzVCO1NBQ0o7SUFDTCxDQUFDO0lBRUQsd0VBQXdFO0lBQ3hFLGdCQUFnQixDQUFDLGFBQXlCO1FBQ3RDLDZDQUE2QztRQUM3QyxJQUFJLENBQUMsa0JBQWtCLEdBQUcsYUFBYSxDQUFDO0lBQzVDLENBQUM7SUFFRCxxREFBcUQ7SUFDckQsaUJBQWlCO1FBQ2IsbUhBQW1IO1FBQ25ILG1CQUFTLENBQUMsUUFBUSxDQUFDLGVBQWUsQ0FBQyxRQUFRLENBQUMsSUFBSSxDQUFDLGtCQUFrQixDQUFDLFNBQVMsQ0FBQyxRQUFRLEVBQUUsbUJBQVMsQ0FBQyxRQUFRLENBQUMsZUFBZSxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUMsQ0FBQztJQUNuSixDQUFDO0NBQ0o7QUE1Q0Qsa0NBNENDIn0=","assetPath":"Assets/StaticResources/Scripts/Managers/ObbyGameManager.ts","manifest":{"properties":[],"name":"ObbyGameManager","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 1e2f4f6dfcdf9eb0898af790273d465a
+  onlyWriteTrigger: 0
