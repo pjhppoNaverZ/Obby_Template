@@ -1,35 +1,35 @@
 import { GameObject, ParticleSystem } from 'UnityEngine';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
-import SpawnPoint from '../Platforms/SpawnPoint';
-import GameState from './GameState';
+import SpawnPlatform from '../Platforms/SpawnPlatform';
+import WorldState from './WorldState';
 
 // This class controls the checkpoint system for the player
-export default class ObbyGameManager extends ZepetoScriptBehaviour {
-    public static instance: ObbyGameManager; // Singleton instance variable
+export default class ObbyWorldManager extends ZepetoScriptBehaviour {
+    public static instance: ObbyWorldManager; // Singleton instance variable
 
-    private _currentCheckpoint: SpawnPoint; // Last saved checkpoint
+    private _currentCheckpoint: SpawnPlatform; // Last saved checkpoint
 
     // Awake is called when the script instance is being loaded
     Awake() {
         // This is how the instance of this class is allocated. Which makes it a "singleton"
         // Singleton https://en.wikipedia.org/wiki/Singleton_pattern
-        if (ObbyGameManager.instance == null) {
-            ObbyGameManager.instance = this;
+        if (ObbyWorldManager.instance == null) {
+            ObbyWorldManager.instance = this;
         } else {
             GameObject.Destroy(this);
-        } 
+        }
     }
 
     // Control when the player has fallen down and respawn him on the last checkpoint
     // Update is called every frame, if the MonoBehaviour is enabled
     Update() {
         // Check if the "zepetoCharacter" variable of the "GameState" instance is not null
-        if (GameState.Instance.zepetoCharacter != null) {
+        if (WorldState.Instance.zepetoCharacter != null) {
             // Check if the positios of the "zepetoCharacter" is less than -20 on Y
             // Which means that the player has fallen from the platforms, if so
-            if (GameState.Instance.zepetoCharacter.transform.position.y < -20) {
+            if (WorldState.Instance.zepetoCharacter.transform.position.y < -20) {
                 // We send the player to the position of "_currentCheckpoint" 
-                GameState.Instance.zepetoCharacter.transform.position = this._currentCheckpoint.transform.position;
+                WorldState.Instance.zepetoCharacter.transform.position = this._currentCheckpoint.transform.position;
 
                 // Call to the internal method that teleports the player
                 this.TeleportCharacter();
@@ -38,7 +38,7 @@ export default class ObbyGameManager extends ZepetoScriptBehaviour {
     }
 
     // This method updates the current checkpoint to one passed by parameter
-    UpdateCheckpoint(newCheckpoint: SpawnPoint) {
+    UpdateCheckpoint(newCheckpoint: SpawnPlatform) {
         // Here we set the reference of "_checkPoint"
         this._currentCheckpoint = newCheckpoint;
     }
@@ -46,6 +46,6 @@ export default class ObbyGameManager extends ZepetoScriptBehaviour {
     // Teleport the character to last checkpoint position
     TeleportCharacter() {
         // We make a call to the function of "zepetoCharacter" "teleport", passing both position and rotation as parameters
-        GameState.Instance.zepetoCharacter.Teleport(this._currentCheckpoint.transform.position, GameState.Instance.zepetoCharacter.transform.rotation);
+        WorldState.Instance.zepetoCharacter.Teleport(this._currentCheckpoint.transform.position, WorldState.Instance.zepetoCharacter.transform.rotation);
     }
 }

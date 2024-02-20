@@ -2,7 +2,7 @@ import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 import { Time } from "UnityEngine";
 
 // This class controls the moving platforms
-export default class SimpleMove extends ZepetoScriptBehaviour 
+export default class MovingPlatform extends ZepetoScriptBehaviour 
 {
     public movingTime: number = 1; // How much time its tooks to move and go back
 

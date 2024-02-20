@@ -1,16 +1,16 @@
 import { Collider } from 'UnityEngine';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
-import GameState from '../Managers/GameState';
-import ObbyGameManager from '../Managers/ObbyGameManager';
+import WorldState from '../Managers/WorldState';
+import ObbyWorldManager from '../Managers/ObbyWorldManager';
 
-export default class Traps extends ZepetoScriptBehaviour {
+export default class TrapPlatform extends ZepetoScriptBehaviour {
 
      // https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html
      OnTriggerEnter ( collider: Collider ) 
      {        
          // Check if the "zepetoCharacter" of the GameSettings instance is null or if the gameobject of the collider is not him and return
          // If so, return the function
-         if ( GameState.Instance.zepetoCharacter == null || collider.gameObject != GameState.Instance.zepetoCharacter.gameObject )
+         if ( WorldState.Instance.zepetoCharacter == null || collider.gameObject != WorldState.Instance.zepetoCharacter.gameObject )
              return;
  
          // Call to the internal function "TPPlayer"
@@ -21,6 +21,6 @@ export default class Traps extends ZepetoScriptBehaviour {
      TPPlayer () 
      {
          // Call to the "TeleportCharacter" function of the ObbyGameManager instance
-         ObbyGameManager.instance.TeleportCharacter();
+         ObbyWorldManager.instance.TeleportCharacter();
      }
 }

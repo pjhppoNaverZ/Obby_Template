@@ -1,6 +1,6 @@
 import { Collider, Coroutine, Quaternion, Vector3, WaitForSeconds } from "UnityEngine";
 import { ZepetoScriptBehaviour } from "ZEPETO.Script";
-import GameState from "../Managers/GameState";
+import WorldState from "../Managers/WorldState";
 
 export default class FallPlatform extends ZepetoScriptBehaviour {
 
@@ -21,7 +21,7 @@ export default class FallPlatform extends ZepetoScriptBehaviour {
   // https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html
   OnTriggerEnter(collider: Collider) {
     // Check if the "zepetoCharacter" of the GameSettings instance is null or if the gameobject of the collider is not him and return
-    if (GameState.Instance.zepetoCharacter == null || collider.gameObject != GameState.Instance.zepetoCharacter.gameObject)
+    if (WorldState.Instance.zepetoCharacter == null || collider.gameObject != WorldState.Instance.zepetoCharacter.gameObject)
       return;
 
     // Check if the internal variable "_falling" is false

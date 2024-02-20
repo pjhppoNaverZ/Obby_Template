@@ -1,9 +1,9 @@
 import { Button } from 'UnityEngine.UI';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
-import GameState from '../Managers/GameState';
+import WorldState from '../Managers/WorldState';
 
 // Class that controls the interactions with the victory screen
-export default class VictoryScreen extends ZepetoScriptBehaviour {
+export default class ResultPanel extends ZepetoScriptBehaviour {
     public resetButton: Button; // Get Reset button reference
 
     // Start is called on the frame when a script is enabled just before any of the Update methods is called the first time
@@ -14,6 +14,6 @@ export default class VictoryScreen extends ZepetoScriptBehaviour {
 
     // Call to reload the scene
     ResetBtnAction(): void {
-        GameState.Instance.ResetMap();
+        WorldState.Instance.ResetMap();
     }
 }

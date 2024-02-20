@@ -6,8 +6,8 @@ import UIManager from './UIManager';
 import { WorldService } from 'ZEPETO.World';
 
 // This class set up the game levels and controls if the player wins or loses
-export default class GameState extends ZepetoScriptBehaviour {
-    public static Instance: GameState; // Singleton instance variable
+export default class WorldState extends ZepetoScriptBehaviour {
+    public static Instance: WorldState; // Singleton instance variable
 
     @HideInInspector() public canWin: bool; // Set if the collision with the goal will trigger the win
     @HideInInspector() public zepetoCharacter: ZepetoCharacter; // Reference of Zepeto Character
@@ -20,8 +20,8 @@ export default class GameState extends ZepetoScriptBehaviour {
     Awake() {
         // This is how the instance of this class is allocated. Which makes it a "singleton"
         // https://en.wikipedia.org/wiki/Singleton_pattern
-        if (GameState.Instance == null) {
-            GameState.Instance = this;
+        if (WorldState.Instance == null) {
+            WorldState.Instance = this;
         } else {
             GameObject.Destroy(this);
         }

@@ -3,7 +3,7 @@ import { ZepetoCharacter } from 'ZEPETO.Character.Controller';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 
 // This class controls the moving platforms
-export default class MovePlatformCollision extends ZepetoScriptBehaviour 
+export default class MovingPlatformCollision extends ZepetoScriptBehaviour 
 {
     // https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html
     // This event is fired when the player reaches the moving platform
