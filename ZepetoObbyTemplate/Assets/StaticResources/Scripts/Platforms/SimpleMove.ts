@@ -7,7 +7,6 @@ export default class MovingPlatform extends ZepetoScriptBehaviour {
     // How much time its tooks to move and go back
     public movingTime: number = 1;
 
-    // Set the amount of distance that will move towards each axis
     @Header("Direction")
     // Amount of distance that the platform will move on X
     public movingRangeX: number = 2;
@@ -49,7 +48,7 @@ export default class MovingPlatform extends ZepetoScriptBehaviour {
             this.transform.Translate(this.movingRangeX * Time.deltaTime, this.movingRangeY * Time.deltaTime, this.movingRangeZ * Time.deltaTime);
         }
         else {
-            
+
             // Move the transform to its initial position
             this.transform.Translate(-this.movingRangeX * Time.deltaTime, -1 * this.movingRangeY * Time.deltaTime, -this.movingRangeZ * Time.deltaTime);
         }
