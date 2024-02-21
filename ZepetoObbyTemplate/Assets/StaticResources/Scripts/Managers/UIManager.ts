@@ -7,7 +7,7 @@ export default class UIManager extends ZepetoScriptBehaviour {
     // Singleton instance variable
     public static Instance: UIManager;
 
-    // Victory panel reference
+    // Result panel reference
     @SerializeField() _resultPanel: GameObject;
 
     // Awake is called when the script instance is being loaded
@@ -22,14 +22,14 @@ export default class UIManager extends ZepetoScriptBehaviour {
     // This method is called when start
     OnStart() {
 
-        // We deactivate  the gameobject "_victoryPanel"
+        // We deactivate  the gameobject "_resultPanel"
         this._resultPanel.SetActive(false);
     }
 
     // This method is called when the player wins
     OnEndWorld(): void {
 
-        // We activate the gameobject "_victoryPanel"
+        // We activate the gameobject "_resultPanel"
         this._resultPanel.SetActive(true);
     }
 
