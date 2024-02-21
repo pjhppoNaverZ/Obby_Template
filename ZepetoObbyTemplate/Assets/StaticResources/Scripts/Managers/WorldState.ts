@@ -103,7 +103,7 @@ export default class WorldState extends ZepetoScriptBehaviour {
         // We call the internal method that resets the game variables
         this.ResetGameVariables();
 
-        // Disable player control following victory
+        // Disable player control when the player wins
         this.ControlPlayer(false);
     }
 

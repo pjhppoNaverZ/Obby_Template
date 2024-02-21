@@ -2,7 +2,7 @@ import { Button } from 'UnityEngine.UI';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 import WorldState from '../Managers/WorldState';
 
-// Class that controls the interactions with the victory screen
+// Class that controls the interactions with the result screen
 export default class ResultPanel extends ZepetoScriptBehaviour {
 
     // Get Reset button reference
