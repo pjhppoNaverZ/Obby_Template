@@ -2,66 +2,87 @@ import { Collider, Coroutine, Quaternion, Vector3, WaitForSeconds } from "UnityE
 import { ZepetoScriptBehaviour } from "ZEPETO.Script";
 import WorldState from "../Managers/WorldState";
 
+// This class represents a platform that can fall and respawn
 export default class FallPlatform extends ZepetoScriptBehaviour {
 
-  public fallDelay: number = 1; // Time it takes to start falling
-  public respawnDelay: number = 3; // Time it takes to respawn
+  // Public variable to set the delay before the platform starts falling
+  public fallDelay: number = 1;
 
-  private _falling: boolean; // Check it is falling
-  private _initPos: Vector3; // Starting position
+  //Public variable that sets the delay before the platform respawns after the player touches it
+  public respawnDelay: number = 3;
+
+  // Private variable to track whether the platform is currently falling
+  private _falling: boolean;
+
+  // Private variable to store the platform's initial position
+  private _initPos: Vector3;
+
+  // Coroutine variable for managing the fall and respawn sequences
   private _coFallPlatform: Coroutine;
 
-  // Start is called on the frame when a script is enabled just before any of the Update methods is called the first time
+  // Called once at the start when the script is enabled, to initialize variables
   Start() {
-    // We save the initial position of the platform
+
+    // Store the initial position of the platform for respawning purposes
     this._initPos = this.transform.position;
   }
 
   // If the platform detects the collision with the player, it calls the method to fall
   // https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html
   OnTriggerEnter(collider: Collider) {
+
     // Check if the "zepetoCharacter" of the GameSettings instance is null or if the gameobject of the collider is not him and return
     if (WorldState.Instance.zepetoCharacter == null || collider.gameObject != WorldState.Instance.zepetoCharacter.gameObject)
       return;
 
-    // Check if the internal variable "_falling" is false
+    // If the platform is not already falling, start the falling and respawning coroutines
     if (!this._falling && this._coFallPlatform == null) {
-      // Set the internal variable "_falling" on true
+
+      // Mark the platform as falling
       this._falling = true;
 
+      // Start the coroutine to make the platform fall
       this._coFallPlatform = this.StartCoroutine(this.CoFallPlatform());
-      this.StartCoroutine(this.CoRespawnPlatform());
 
-      // DEV NOTE: 
-      // Using an Invoke instead of a direct call, allows us to add a delay for its execution
+      // Start the coroutine to respawn the platform after it falls
+      this.StartCoroutine(this.CoRespawnPlatform());
     }
 
   }
 
-  // This method causes the platform to start falling
+  // Coroutine to handle the platform's falling behavior
   *CoFallPlatform() {
 
+    // Wait for the specified fall delay
     yield new WaitForSeconds(this.fallDelay);
 
+    // Continue falling until the falling condition is false
     while (this._falling) {
+
+      // Move the platform downwards
       this.transform.Translate(0, -0.5, 0);
+
+      // Yield control back to the engine until the next frame
       yield null;
     }
   }
 
-  // This method is responsible for returning the platform to its initial state
+  // Coroutine to respawn the platform to its initial position
   *CoRespawnPlatform() {
+
+    // Wait for the specified respawn delay
     yield new WaitForSeconds(this.respawnDelay);
 
-    // We set the flag of is falling on false
+    // Reset the falling flag
     this._falling = false;
 
-    // Set the rotation of the transform to zero
+    // Reset the platform's rotation to its original state
     this.transform.rotation = Quaternion.Euler(0, 0, 0);
 
-    // Set the position into the exact same position at start
+    // Reset the platform's position to its initial state
     this.transform.position = this._initPos;
 
+    // Clear the coroutine variable
     this._coFallPlatform = null;
   }
 

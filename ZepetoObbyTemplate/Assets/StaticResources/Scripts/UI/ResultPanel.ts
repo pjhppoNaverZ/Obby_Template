@@ -4,10 +4,13 @@ import WorldState from '../Managers/WorldState';
 
 // Class that controls the interactions with the victory screen
 export default class ResultPanel extends ZepetoScriptBehaviour {
-    public resetButton: Button; // Get Reset button reference
+
+    // Get Reset button reference
+    public resetButton: Button;
 
     // Start is called on the frame when a script is enabled just before any of the Update methods is called the first time
     Start() {
+
         // We add a function to "resetButton" when we click on it
         this.resetButton.onClick.AddListener(this.ResetBtnAction);
     }
