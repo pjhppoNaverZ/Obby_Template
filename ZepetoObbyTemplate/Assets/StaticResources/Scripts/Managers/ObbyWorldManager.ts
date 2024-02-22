@@ -28,7 +28,7 @@ export default class ObbyWorldManager extends ZepetoScriptBehaviour {
     // Update is called every frame, if the MonoBehaviour is enabled
     Update() {
 
-        // Check if the "zepetoCharacter" variable of the "GameState" instance is not null
+        // Check if the "zepetoCharacter" variable of the "WorldState" instance is not null
         if (WorldState.Instance.zepetoCharacter != null) {
 
             // Check if the positios of the "zepetoCharacter" is less than -20 on Y

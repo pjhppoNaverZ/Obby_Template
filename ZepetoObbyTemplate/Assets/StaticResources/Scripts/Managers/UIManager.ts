@@ -1,7 +1,7 @@
 import { GameObject } from 'UnityEngine';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 
-// This class controls all the UI process of the game
+// This class controls all the UI process of the world
 export default class UIManager extends ZepetoScriptBehaviour {
 
     // Singleton instance variable

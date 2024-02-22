@@ -5,7 +5,7 @@ import { SceneManager } from 'UnityEngine.SceneManagement';
 import UIManager from './UIManager';
 import { WorldService } from 'ZEPETO.World';
 
-// This class set up the game levels and controls if the player wins or loses
+// This class set up the world levels and controls if the player wins or loses
 export default class WorldState extends ZepetoScriptBehaviour {
 
     // Singleton instance variable
@@ -20,7 +20,7 @@ export default class WorldState extends ZepetoScriptBehaviour {
     // Controls if the player is already on world
     private _playerSpawned: bool;
 
-    // Reference to the UIZepetoPlayerControl to restrict the use when you are in the game
+    // Reference to the UIZepetoPlayerControl to restrict the use when you are in the world
     private controlUI: UIZepetoPlayerControl;
 
     // Awake is called when the script instance is being loaded
@@ -64,7 +64,7 @@ export default class WorldState extends ZepetoScriptBehaviour {
         });
     }
 
-    // This method resets the game state
+    // This method resets the world state
     ResetGameVariables(): void {
 
         // Set to false the internal flag "canWin"
@@ -79,7 +79,7 @@ export default class WorldState extends ZepetoScriptBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // This method is called when player start the game
+    // This method is called when player starts the world
     OnWorldStart(): void {
 
         // If this player is not generated, we call the respective method
@@ -100,7 +100,7 @@ export default class WorldState extends ZepetoScriptBehaviour {
         // Calling the same event in the UIManagers
         UIManager.Instance.OnEndWorld();
 
-        // We call the internal method that resets the game variables
+        // We call the internal method that resets the world variables
         this.ResetGameVariables();
 
         // Disable player control when the player wins

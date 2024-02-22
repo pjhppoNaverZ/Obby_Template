@@ -28,7 +28,7 @@ export default class MovingPlatform extends ZepetoScriptBehaviour {
     // https://docs.unity3d.com/ScriptReference/MonoBehaviour.FixedUpdate.html
     FixedUpdate() {
 
-        // We count every second that is happen on the game and save it on "_delta"
+        // We count every second that is happen on the world and save it on "_delta"
         this._delta += Time.deltaTime;
 
         // Check if the amount of "_delta" is more or equal to "movingTime"
