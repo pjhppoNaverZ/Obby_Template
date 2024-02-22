@@ -71,7 +71,7 @@ export default class FallPlatform extends ZepetoScriptBehaviour {
   *CoRespawnPlatform() {
 
     // Wait for the specified respawn delay
-    yield new WaitForSeconds(this.respawnDelay);
+    yield new WaitForSeconds(this.fallDelay + this.respawnDelay);
 
     // Reset the falling flag
     this._falling = false;
