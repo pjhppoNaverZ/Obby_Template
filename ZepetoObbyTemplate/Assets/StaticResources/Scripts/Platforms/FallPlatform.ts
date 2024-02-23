@@ -31,6 +31,10 @@ export default class FallPlatform extends ZepetoScriptBehaviour {
   // https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html
   OnTriggerEnter(collider: Collider) {
 
+    if(this.respawnDelay == 0){
+      this.respawnDelay = 0.25;
+    }
+
     // Check if the "zepetoCharacter" of the WorldSettings instance is null or if the gameobject of the collider is not him and return
     if (WorldState.Instance.zepetoCharacter == null || collider.gameObject != WorldState.Instance.zepetoCharacter.gameObject)
       return;
