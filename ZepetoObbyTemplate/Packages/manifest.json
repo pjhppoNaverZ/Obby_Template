@@ -47,8 +47,7 @@
       "name": "ZEPETO",
       "url": "https://upm.zepeto.run",
       "scopes": [
-        "zepeto",
-        "asset"
+        "zepeto"
       ]
     }
   ]
