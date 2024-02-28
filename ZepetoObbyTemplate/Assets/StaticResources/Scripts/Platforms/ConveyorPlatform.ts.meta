@@ -1,0 +1,46 @@
+fileFormatVersion: 2
+guid: 0c7ee117939224201afdbdfd30eb34c1
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass ConveyorPlatform extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    constructor() {\r\n        super(...arguments);\r\n       
+    this._force = 2;\r\n    }\r\n    // Unity calls this function on a trigger collider
+    once per frame if it detects another Collider inside the trigger collider.\r\n   
+    OnTriggerStay(coll) {\r\n        console.log(\"Stay\");\r\n        // Obtain
+    the ZepetoCharacter component from the collider that activates the trigger\r\n       
+    let _player = coll.GetComponent($typeof(ZEPETO_Character_Controller_1.ZepetoCharacter));\r\n       
+    // Check if the variable \"_player\" is not null\r\n        if (_player) {\r\n           
+    // // Get the player controller from the collider\r\n            // let zepetoCharacter:
+    ZepetoCharacter = coll.gameObject.GetComponent<ZepetoCharacter>();\r\n           
+    // // // Push the player forwards of the conveyor\r\n            // zepetoCharacter.characterController.SimpleMove(this.transform.forward);\r\n           
+    // // // Set the additional walk and run speed to the force of the conveyor\r\n           
+    // zepetoCharacter.additionalWalkSpeed = -this._force;\r\n            // zepetoCharacter.additionalRunSpeed
+    = -this._force;\r\n        }\r\n    }\r\n    // Unity calls this function on
+    a trigger collider when it ceases contact with another collider.\r\n    OnTriggerExit(coll)
+    {\r\n        // // Check if the colliding object has the tag player\r\n       
+    // if (coll.CompareTag(\"Player\")) {\r\n        //     // Get the player controller
+    from the collider\r\n        //     let zepetoCharacter: ZepetoCharacter = coll.gameObject.GetComponent<ZepetoCharacter>();\r\n       
+    //     // // Set the additional walk and run speed to 0\r\n        //     zepetoCharacter.additionalWalkSpeed
+    = 0;            \r\n        //     zepetoCharacter.additionalRunSpeed = 0;\r\n       
+    // }\r\n    }\r\n}\r\nexports.default = ConveyorPlatform;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ29udmV5b3JQbGF0Zm9ybS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkNvbnZleW9yUGxhdGZvcm0udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBZ0Q7QUFDaEQsNkVBQTRFO0FBQzVFLGlEQUFxRDtBQUVyRCxNQUFxQixnQkFBaUIsU0FBUSxxQ0FBcUI7SUFBbkU7O1FBQ1ksV0FBTSxHQUFXLENBQUMsQ0FBQztJQXdDL0IsQ0FBQztJQXRDRyw2SEFBNkg7SUFDN0gsYUFBYSxDQUFDLElBQWM7UUFDeEIsT0FBTyxDQUFDLEdBQUcsQ0FBQyxNQUFNLENBQUMsQ0FBQztRQUNwQixvRkFBb0Y7UUFDcEYsSUFBSSxPQUFPLEdBQUcsSUFBSSxDQUFDLFlBQVksU0FBQyw2Q0FBZSxFQUFHLENBQUM7UUFFbkQsOENBQThDO1FBQzlDLElBQUksT0FBTyxFQUFFO1lBR1QsaURBQWlEO1lBQ2pELDBGQUEwRjtZQUUxRixpREFBaUQ7WUFDakQsMEVBQTBFO1lBRTFFLDJFQUEyRTtZQUMzRSxzREFBc0Q7WUFDdEQscURBQXFEO1NBRXhEO0lBRUwsQ0FBQztJQUVELGdHQUFnRztJQUNoRyxhQUFhLENBQUMsSUFBYztRQUV4QixzREFBc0Q7UUFDdEQsbUNBQW1DO1FBRW5DLHFEQUFxRDtRQUNyRCw4RkFBOEY7UUFFOUYsdURBQXVEO1FBQ3ZELDJEQUEyRDtRQUMzRCw4Q0FBOEM7UUFDOUMsSUFBSTtJQUNSLENBQUM7Q0FDSjtBQXpDRCxtQ0F5Q0MifQ==","assetPath":"Assets/StaticResources/Scripts/Platforms/ConveyorPlatform.ts","manifest":{"properties":[],"name":"ConveyorPlatform","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 64dce6725ed96da3790f71f0f73eaf53
+  onlyWriteTrigger: 0

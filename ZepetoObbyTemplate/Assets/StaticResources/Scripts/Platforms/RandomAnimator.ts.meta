@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 1a9bb558a8bac4b70b095e9d71cefc87
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass RandomAnimator extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n        this.anims
+    = this.gameObject.GetComponentsInChildren($typeof(UnityEngine_1.Animator));\r\n       
+    this.anims.forEach(e => {\r\n            const randomCycleOffset = UnityEngine_1.Random.Range(0,
+    4);\r\n            const stateInfo = e.GetCurrentAnimatorStateInfo(0);\r\n           
+    e.Play(stateInfo.shortNameHash, -1, randomCycleOffset);\r\n        });\r\n   
+    }\r\n}\r\nexports.default = RandomAnimator;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUmFuZG9tQW5pbWF0b3IuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJSYW5kb21BbmltYXRvci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUFxRDtBQUNyRCxpREFBcUQ7QUFFckQsTUFBcUIsY0FBZSxTQUFRLHFDQUFxQjtJQUk3RCxLQUFLO1FBRUQsSUFBSSxDQUFDLEtBQUssR0FBRyxJQUFJLENBQUMsVUFBVSxDQUFDLHVCQUF1QixTQUFDLHNCQUFRLEVBQUcsQ0FBQztRQUNqRSxJQUFJLENBQUMsS0FBSyxDQUFDLE9BQU8sQ0FBQyxDQUFDLENBQUMsRUFBRTtZQUVuQixNQUFNLGlCQUFpQixHQUFHLG9CQUFNLENBQUMsS0FBSyxDQUFDLENBQUMsRUFBRSxDQUFDLENBQUMsQ0FBQztZQUM3QyxNQUFNLFNBQVMsR0FBRyxDQUFDLENBQUMsMkJBQTJCLENBQUMsQ0FBQyxDQUFDLENBQUM7WUFDbkQsQ0FBQyxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsYUFBYSxFQUFFLENBQUMsQ0FBQyxFQUFFLGlCQUFpQixDQUFDLENBQUM7UUFDM0QsQ0FBQyxDQUFDLENBQUM7SUFFUCxDQUFDO0NBRUo7QUFoQkQsaUNBZ0JDIn0=","assetPath":"Assets/StaticResources/Scripts/Platforms/RandomAnimator.ts","manifest":{"properties":[],"name":"RandomAnimator","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: c93da5337cbdaabf7d47f0fb977e9da3
+  onlyWriteTrigger: 0
