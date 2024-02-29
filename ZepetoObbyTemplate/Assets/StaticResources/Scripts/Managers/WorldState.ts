@@ -51,7 +51,7 @@ export default class WorldState extends ZepetoScriptBehaviour {
         this._playerSpawned = true;
 
         // Instance of the player zepeto
-        ZepetoPlayers.instance.CreatePlayerWithUserId(WorldService.userId, new SpawnInfo(), true);
+        //ZepetoPlayers.instance.CreatePlayerWithUserId(WorldService.userId, new SpawnInfo(), true);
 
         // The instantiation can take a few seconds, the following lines are executed once this happens
         ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(() => {

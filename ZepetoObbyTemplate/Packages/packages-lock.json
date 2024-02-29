@@ -8,15 +8,6 @@
       "url": "https://upm.zepeto.run"
     },
     "asset.effect": {
-      "version": "1.0.1",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "asset.commons": "1.0.6"
-      },
-      "url": "https://upm.zepeto.run"
-    },
-    "asset.partyroom": {
       "version": "1.0.2",
       "depth": 0,
       "source": "registry",
@@ -25,8 +16,17 @@
       },
       "url": "https://upm.zepeto.run"
     },
-    "asset.sugarland": {
+    "asset.partyroom": {
       "version": "1.0.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "asset.commons": "1.0.6"
+      },
+      "url": "https://upm.zepeto.run"
+    },
+    "asset.sugarland": {
+      "version": "1.0.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -169,13 +169,6 @@
       },
       "url": "https://upm.zepeto.run"
     },
-    "zepeto.buildit.loader": {
-      "version": "0.0.3",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://upm.zepeto.run"
-    },
     "zepeto.character": {
       "version": "3.1.18",
       "depth": 1,
@@ -208,7 +201,7 @@
       "url": "https://upm.zepeto.run"
     },
     "zepeto.module": {
-      "version": "1.0.8",
+      "version": "1.0.9",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -266,14 +259,14 @@
       "url": "https://upm.zepeto.run"
     },
     "zepeto.world": {
-      "version": "1.21.15",
+      "version": "1.21.16",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "zepeto.world.shared": "1.10.11",
         "zepeto.script": "1.14.7",
         "zepeto.event.bus": "0.5.3",
-        "zepeto.module": "1.0.8",
+        "zepeto.module": "1.0.9",
         "zepeto.multiplay": "1.11.1",
         "zepeto.multiplay.script": "1.12.10",
         "zepeto.character": "3.1.18",

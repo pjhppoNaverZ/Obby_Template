@@ -1,0 +1,39 @@
+fileFormatVersion: 2
+guid: ed41afbe521274e14b1dca666fe2278c
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass StaticPlatform extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n        this.anim
+    = this.GetComponent($typeof(UnityEngine_1.Animator));\r\n    }\r\n    // https://docs.unity3d.com/ScriptReference/Collider.OnTriggerEnter.html\r\n   
+    // This event is fired when the player reaches the moving platform\r\n    OnTriggerEnter(collider)
+    {\r\n        // Obtain the ZepetoCharacter component from the collider that activates
+    the trigger\r\n        let _player = collider.GetComponent($typeof(ZEPETO_Character_Controller_1.ZepetoCharacter));\r\n       
+    // Check if the variable \"_player\" is not null\r\n        if (_player) {\r\n           
+    this.anim.SetTrigger(\"Down\");\r\n        }\r\n    }\r\n    // https://docs.unity3d.com/ScriptReference/Collider.OnTriggerExit.html\r\n   
+    // This event is fired when the player leaves the moving platform\r\n    OnTriggerExit(collider)
+    {\r\n        // Obtain the ZepetoCharacter component from the collider that activates
+    the trigger\r\n        let _player = collider.GetComponent($typeof(ZEPETO_Character_Controller_1.ZepetoCharacter));\r\n       
+    // Check if the variable \"_player\" is not null\r\n        if (_player) {\r\n           
+    this.anim.SetTrigger(\"Up\");\r\n        }\r\n    }\r\n}\r\nexports.default =
+    StaticPlatform;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU3RhdGljUGxhdGZvcm0uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJTdGF0aWNQbGF0Zm9ybS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUFpRDtBQUNqRCw2RUFBOEQ7QUFDOUQsaURBQXFEO0FBRXJELE1BQXFCLGNBQWUsU0FBUSxxQ0FBcUI7SUFJN0QsS0FBSztRQUNELElBQUksQ0FBQyxJQUFJLEdBQUcsSUFBSSxDQUFDLFlBQVksU0FBQyxzQkFBUSxFQUFHLENBQUM7SUFDOUMsQ0FBQztJQUNGLHdFQUF3RTtJQUN2RSxrRUFBa0U7SUFDbEUsY0FBYyxDQUFDLFFBQWtCO1FBRTdCLG9GQUFvRjtRQUNwRixJQUFJLE9BQU8sR0FBRyxRQUFRLENBQUMsWUFBWSxTQUFDLDZDQUFlLEVBQUcsQ0FBQztRQUV2RCw4Q0FBOEM7UUFDOUMsSUFBSSxPQUFPLEVBQUU7WUFFVCxJQUFJLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxNQUFNLENBQUMsQ0FBQztTQUNoQztJQUNMLENBQUM7SUFFRCx1RUFBdUU7SUFDdkUsaUVBQWlFO0lBQ2pFLGFBQWEsQ0FBQyxRQUFrQjtRQUU1QixvRkFBb0Y7UUFDcEYsSUFBSSxPQUFPLEdBQUcsUUFBUSxDQUFDLFlBQVksU0FBQyw2Q0FBZSxFQUFHLENBQUM7UUFFdkQsOENBQThDO1FBQzlDLElBQUksT0FBTyxFQUFFO1lBRVQsSUFBSSxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsSUFBSSxDQUFDLENBQUM7U0FDOUI7SUFDTCxDQUFDO0NBRUo7QUFuQ0QsaUNBbUNDIn0=","assetPath":"Assets/StaticResources/Scripts/Platforms/StaticPlatform.ts","manifest":{"properties":[],"name":"StaticPlatform","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 57d77b5623e7da991167aeb6bd44c4ba
+  onlyWriteTrigger: 0
