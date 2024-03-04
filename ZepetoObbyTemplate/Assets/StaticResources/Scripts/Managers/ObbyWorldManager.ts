@@ -2,6 +2,7 @@ import { GameObject } from 'UnityEngine';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 import SpawnPlatform from '../Platforms/SpawnPlatform';
 import WorldState from './WorldState';
+import { Button } from 'UnityEngine.UI';
 
 // This class controls the checkpoint system for the player
 export default class ObbyWorldManager extends ZepetoScriptBehaviour {
@@ -11,6 +12,8 @@ export default class ObbyWorldManager extends ZepetoScriptBehaviour {
 
     // Last saved checkpoint
     private _currentCheckpoint: SpawnPlatform;
+
+    public jumpButton: Button;
 
     // Awake is called when the script instance is being loaded
     Awake() {
@@ -56,4 +59,6 @@ export default class ObbyWorldManager extends ZepetoScriptBehaviour {
         // We make a call to the function of "zepetoCharacter" "teleport", passing both position and rotation as parameters
         WorldState.Instance.zepetoCharacter.Teleport(this._currentCheckpoint.transform.position, WorldState.Instance.zepetoCharacter.transform.rotation);
     }
+
+
 }

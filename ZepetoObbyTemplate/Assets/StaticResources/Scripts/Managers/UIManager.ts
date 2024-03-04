@@ -1,5 +1,6 @@
-import { GameObject } from 'UnityEngine';
+import { GameObject, Object } from 'UnityEngine';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
+import { ZepetoPlayers, ZepetoScreenButton, CharacterState } from 'ZEPETO.Character.Controller';
 
 // This class controls all the UI process of the world
 export default class UIManager extends ZepetoScriptBehaviour {
@@ -31,6 +32,26 @@ export default class UIManager extends ZepetoScriptBehaviour {
 
         // We activate the gameobject "_resultPanel"
         this._resultPanel.SetActive(true);
+    }
+
+    Start() {
+        this.SetDoubleJump();
+    }
+
+    SetDoubleJump() {
+
+        ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(() => {
+
+            const zepetoCharacter = ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character;
+
+            const screenButton = Object.FindObjectOfType<ZepetoScreenButton>();
+
+            screenButton.OnPointDownEvent.AddListener(() => {
+                if (zepetoCharacter.CurrentState === CharacterState.Jump) {
+                    zepetoCharacter.DoubleJump();
+                }
+            });
+        })
     }
 
 }

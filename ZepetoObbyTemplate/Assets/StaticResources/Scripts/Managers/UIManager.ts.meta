@@ -20,7 +20,8 @@ ScriptedImporter:
   wrapperOutputDirectory: Generated
   compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
     { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
-    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\n// This class controls all the
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst ZEPETO_Character_Controller_1
+    = require(\"ZEPETO.Character.Controller\");\r\n// This class controls all the
     UI process of the world\r\nclass UIManager extends ZEPETO_Script_1.ZepetoScriptBehaviour
     {\r\n    // Awake is called when the script instance is being loaded\r\n    Awake()
     {\r\n        // This is how the instance of this class is allocated. Which makes
@@ -31,6 +32,13 @@ ScriptedImporter:
     {\r\n        // We deactivate  the gameobject \"_resultPanel\"\r\n        this._resultPanel.SetActive(false);\r\n   
     }\r\n    // This method is called when the player wins\r\n    OnEndWorld() {\r\n       
     // We activate the gameobject \"_resultPanel\"\r\n        this._resultPanel.SetActive(true);\r\n   
-    }\r\n}\r\nexports.default = UIManager;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVUlNYW5hZ2VyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiVUlNYW5hZ2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQXlDO0FBQ3pDLGlEQUFxRDtBQUVyRCxzREFBc0Q7QUFDdEQsTUFBcUIsU0FBVSxTQUFRLHFDQUFxQjtJQVF4RCwyREFBMkQ7SUFDM0QsS0FBSztRQUVELG9GQUFvRjtRQUNwRiw0REFBNEQ7UUFDNUQsSUFoQkMscUNBQXFCLENBa0MwNUwsYUFBYyxDQWxCMTdMLFNBQVMsQ0FBQyxRQUFRLEVBQUksSUFBSTtZQUFFLHdCQUFVLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsQ0FBQztRQUNwRSxTQUFTLENBQUMsUUFBUSxHQUFHLElBQUksQ0FBQztJQUM5QixDQUFDO0lBRUQsbUNBQW1DO0lBQ25DLE9BQU87UUFFSCwrQ0FBK0M7UUFDL0MsSUFBSSxDQUFDLFlBQVksQ0FBQyxTQUFTLENBQUMsS0FBSyxDQUFDLENBQUM7SUFDdkMsQ0FBQztJQUVELDZDQUE2QztJQUM3QyxVQUFVO1FBRU4sNENBQTRDO1FBQzVDLElBQUksQ0FBQyxZQUFZLENBQUMsU0FBUyxDQUFDLElBQUksQ0FBQyxDQUFDO0lBQ3RDLENBQUM7Q0FFSjtBQS9CRCw0QkErQkMifQ==","assetPath":"Assets/StaticResources/Scripts/Managers/UIManager.ts","manifest":{"properties":[{"assembly":"UnityEngine.CoreModule","name":"_resultPanel","type":"UnityEngine.GameObject","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]}],"name":"UIManager","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: adceafe8b1a1261d525dfd7934c882a2
+    }\r\n    Start() {\r\n        this.SetDoubleJump();\r\n    }\r\n    SetDoubleJump()
+    {\r\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\r\n            const zepetoCharacter = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character;\r\n           
+    const screenButton = UnityEngine_1.Object.FindObjectOfType($typeof(ZEPETO_Character_Controller_1.ZepetoScreenButton));\r\n           
+    screenButton.OnPointDownEvent.AddListener(() => {\r\n                if (zepetoCharacter.CurrentState
+    === ZEPETO_Character_Controller_1.CharacterState.Jump) {\r\n                   
+    zepetoCharacter.DoubleJump();\r\n                }\r\n            });\r\n       
+    });\r\n    }\r\n}\r\nexports.default = UIManager;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVUlNYW5hZ2VyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiVUlNYW5hZ2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQWlEO0FBQ2pELGlEQUFxRDtBQUNyRCw2RUFBZ0c7QUFFaEcsc0RBQXNEO0FBQ3RELE1BQXFCLFNBQVUsU0FBUSxxQ0FBcUI7SUFReEQsMkRBQTJEO0lBQzNELEtBQUs7UUFFRCxvRkFBb0Y7UUFDcEYsNERBQTREO1FBQzVELElBakJDLHFDQUFxQixDQXVEK3ZLLGFBQWMsQ0F0Qy94SyxTQUFTLENBQUMsUUFBUSxFQUFJLElBQUk7WUFBRSx3QkFBVSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLENBQUM7UUFDcEUsU0FBUyxDQUFDLFFBQVEsR0FBRyxJQUFJLENBQUM7SUFDOUIsQ0FBQztJQUVELG1DQUFtQztJQUNuQyxPQUFPO1FBRUgsK0NBQStDO1FBQy9DLElBQUksQ0FBQyxZQUFZLENBQUMsU0FBUyxDQUFDLEtBQUssQ0FBQyxDQUFDO0lBQ3ZDLENBQUM7SUFFRCw2Q0FBNkM7SUFDN0MsVUFBVTtRQUVOLDRDQUE0QztRQUM1QyxJQUFJLENBQUMsWUFBWSxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsQ0FBQztJQUN0QyxDQUFDO0lBRUQsS0FBSztRQUNELElBQUksQ0FBQyxhQUFhLEVBQUUsQ0FBQztJQUN6QixDQUFDO0lBRUQsYUFBYTtRQUVULDJDQUFhLENBQUMsUUFBUSxDQUFDLGtCQUFrQixDQUFDLFdBQVcsQ0FBQyxHQUFHLEVBQUU7WUFFdkQsTUFBTSxlQUFlLEdBQUcsMkNBQWEsQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDLFlBQVksQ0FBQyxTQUFTLENBQUM7WUFFbEYsTUFBTSxZQUFZLEdBQUcsb0JBQU0sQ0FBQyxnQkFBZ0IsU0FBQyxnREFBa0IsRUFBRyxDQUFDO1lBRW5FLFlBQVksQ0FBQyxnQkFBZ0IsQ0FBQyxXQUFXLENBQUMsR0FBRyxFQUFFO2dCQUMzQyxJQUFJLGVBQWUsQ0FBQyxZQUFZLEtBQUssNENBQWMsQ0FBQyxJQUFJLEVBQUU7b0JBQ3RELGVBQWUsQ0FBQyxVQUFVLEVBQUUsQ0FBQztpQkFDaEM7WUFDTCxDQUFDLENBQUMsQ0FBQztRQUNQLENBQUMsQ0FBQyxDQUFBO0lBQ04sQ0FBQztDQUVKO0FBbkRELDRCQW1EQyJ9","assetPath":"Assets/StaticResources/Scripts/Managers/UIManager.ts","manifest":{"properties":[{"assembly":"UnityEngine.CoreModule","name":"_resultPanel","type":"UnityEngine.GameObject","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]}],"name":"UIManager","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 28b8145b7c09c470a2b358f0cfaa2c9c
   onlyWriteTrigger: 0
