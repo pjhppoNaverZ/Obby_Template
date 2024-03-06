@@ -45,8 +45,6 @@ Now, are you ready to get started?
 - **Spawn Platform :** This is the first platform, used as the base of spawn.
   - Appearance
   - <img width="512" alt="image" src="./Docs/Images/Obby_readme_5.png"></img>
-<br>
-
   - Required Components
     - SpawnPlatform Script
     - Trigger Settings
@@ -61,8 +59,6 @@ Now, are you ready to get started?
 - **Trap Platform :** A sample for the death system. Stepping on it will return you to the most recently visited checkpoint.
   - Appearance
   - <img width="512" alt="image" src="./Docs/Images/Obby_readme_7.png"></img>
-<br>
-
   - Required Components
     - TrapPlatform Script
     - Trigger Settings
@@ -73,8 +69,6 @@ Now, are you ready to get started?
 - **Fall Platform :** Stepping on the platform will cause it to fall after a set time (in seconds) defined by Fall Delay, and it will respawn after a time set by Respawn Delay.  
   - Appearance
   - <img width="512" alt="image" src="./Docs/Images/Obby_readme_9.png"></img>
-<br>
-
   - Required Components
     - FallPlatform Script
       - Fall Delay : sets the delay before it falls
@@ -93,8 +87,6 @@ Now, are you ready to get started?
 - **Goal Platform :** Used as a goal, add it at the end of the level. When the player passes over it, a victory tab will appear.
   - Appearance
   - <img width="512" alt="image" src="./Docs/Images/Obby_readme_12.png"></img>
-<br>
-
   - Required Components
     - GoalPlatform Script
     - Trigger Settings
@@ -106,8 +98,6 @@ Now, are you ready to get started?
 - **MovingPlatform :** This platform can move along any axis. Set the movement amount and the time it takes to return.
   - Appearance
   - <img width="512" alt="image" src="./Docs/Images/Obby_readme_14.png"></img>
-<br>
-
   - Required Components
     - SimpleMove Script
       - Moving Time : The duration of movement
@@ -129,8 +119,6 @@ Now, are you ready to get started?
 - **Check Point Platform :** An empty gameObject that serves as the checkpoint to teleport the player upon loss.
   - Appearance
   - <img width="512" alt="image" src="./Docs/Images/Obby_readme_16.png"></img>
-<br>
-
   - Required Components
     - GoalPlatform Script
     - Trigger Settings
