@@ -33,7 +33,7 @@ Now, are you ready to get started?
 
 ## :clapper: Tutorials
 
-- TObby Tamplate tutorial1 (타이틀 변경 및 동영상 교체 예정)
+- Obby Tamplate tutorial Playlist (타이틀 변경 및 동영상 교체 예정)
 - [![Obby Tamplate tutorial1](./Docs/Images/Youtube_Thumbnail.png)](https://www.youtube.com/embed/i4zmJQpn7Zw?si=jSmPoJgnpGk2KhQK)
 
 <br><br>
