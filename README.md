@@ -33,8 +33,8 @@ Now, are you ready to get started?
 
 ## :clapper: Tutorials
 
-- Tutorial Title1 (타이틀 변경 및 동영상 교체 예정)
-- <iframe width="512" height="315" src="https://www.youtube.com/embed/i4zmJQpn7Zw?si=jSmPoJgnpGk2KhQK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+- TObby Tamplate tutorial1 (타이틀 변경 및 동영상 교체 예정)
+- [![Obby Tamplate tutorial1](./Docs/Images/Youtube_Thumbnail.png)](https://www.youtube.com/embed/i4zmJQpn7Zw?si=jSmPoJgnpGk2KhQK)
 
 <br><br>
 
@@ -66,7 +66,7 @@ Now, are you ready to get started?
   - Required Components
     - TrapPlatform Script
     - Trigger Settings
-    <img width="480" alt="image" src="./Docs/Images/Obby_readme_8.png"></img>
+    - <img width="480" alt="image" src="./Docs/Images/Obby_readme_8.png"></img>
 <br><br>
 
 
@@ -80,7 +80,7 @@ Now, are you ready to get started?
       - Fall Delay : sets the delay before it falls
       - Respawn Delay : sets the delay before it respawns
     - Trigger Settings
-    <img width="480" alt="image" src="./Docs/Images/Obby_readme_10.png"></img>
+    - <img width="480" alt="image" src="./Docs/Images/Obby_readme_10.png"></img>
 
   - :notebook: Note 
     - When customizing the Fall Platform's appearance, replace the child object (Ground_Model) with a different model, ensuring the Static property is unchecked. 
@@ -98,7 +98,7 @@ Now, are you ready to get started?
   - Required Components
     - GoalPlatform Script
     - Trigger Settings
-    <img width="480" alt="image" src="./Docs/Images/Obby_readme_13.png"></img>
+    - <img width="480" alt="image" src="./Docs/Images/Obby_readme_13.png"></img>
 <br><br>
 
 
@@ -116,7 +116,7 @@ Now, are you ready to get started?
       - Moving Range Z : The distance of movement along the Z-axis
     - MovingPlatformCollision Script
     - Trigger Settings
-    <img width="480" alt="image" src="./Docs/Images/Obby_readme_15.png"></img>
+    - <img width="480" alt="image" src="./Docs/Images/Obby_readme_15.png"></img>
   - :notebook: Note 
     - Only input values in the direction you want it to move, leaving the rest as 0.
     - When customizing the Fall Platform's appearance, replace the child object (Ground_Model) with a different model, ensuring the Static property is unchecked. 
