@@ -50,7 +50,7 @@ Now, are you ready to get started?
   - Required Components
     - SpawnPlatform Script
     - Trigger Settings
-    <img width="480" alt="image" src="./Docs/Images/Obby_readme_6.png"></img>
+    - <img width="480" alt="image" src="./Docs/Images/Obby_readme_6.png"></img>
 
   - :notebook: Note 
     - Please ensure only one exists in the Scene.
